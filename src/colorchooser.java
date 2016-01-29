@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 
 public class colorchooser extends JFrame {
 
-  private JLabel sampleText = new JLabel("Label");
+  private JLabel sampleText = new JLabel("Example Text" + "dog");
   private JButton chooseButton = new JButton("Choose Color");
 
   public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class colorchooser extends JFrame {
     this.add(panel1);
     this.setVisible(true);
   }
-
+ 
   private class ButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
       Color c = JColorChooser.showDialog(null, "Choose a Color", sampleText.getForeground());
