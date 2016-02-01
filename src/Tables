@@ -1,0 +1,72 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.GraphicsEnvironment;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.Action;
+import javax.swing.JButton;
+import javax.swing.JColorChooser;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JEditorPane;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextPane;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.Element;
+import javax.swing.text.MutableAttributeSet;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyledDocument;
+import javax.swing.text.StyledEditorKit;
+
+public class color {
+  public color() {
+    JFrame frame = new JFrame();
+    JTextPane textPane = new JTextPane();
+    JScrollPane scrollPane = new JScrollPane(textPane);
+
+    JPanel north = new JPanel();
+
+    JMenuBar menu = new JMenuBar();
+    JMenu styleMenu = new JMenu();
+    styleMenu.setText("Style");
+
+    Action boldAction = new BoldAction();
+    boldAction.putValue(Action.NAME, "Bold");
+    styleMenu.add(boldAction);
+
+    Action italicAction = new ItalicAction();
+    italicAction.putValue(Action.NAME, "Italic");
+    styleMenu.add(italicAction);
+
+    Action foregroundAction = new ForegroundAction();
+    foregroundAction.putValue(Action.NAME, "Color");
+    styleMenu.add(foregroundAction);
+
+    Action formatTextAction = new FontAndSizeAction();
+    formatTextAction.putValue(Action.NAME, "Font and Size");
+    styleMenu.add(formatTextAction);
+
+    menu.add(styleMenu);
+
+    north.add(menu);
+    frame.getContentPane().setLayout(new BorderLayout());
+    frame.getContentPane().add(north, BorderLayout.NORTH);
+    frame.getContentPane().add(scrollPane, BorderLayout.CENTER);
+    frame.setSize(800, 500);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setVisible(true);
+  }
+
+  public static void main(String[] args) {
+    new color();
+  }
+}
