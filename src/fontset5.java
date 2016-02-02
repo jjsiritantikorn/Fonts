@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
  
 public class fontset5 {
 
@@ -35,6 +36,8 @@ public class fontset5 {
           {
               fontselect.addItem( names[i] );
           }
+
+    	  
     	  fontselect.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		
@@ -61,6 +64,7 @@ public class fontset5 {
 		    	sizeselect.addItem(i);   	
 		    }
 		    sizeselect.setSelectedItem(12);
+		    sizeselect.setEditable(true);
 		    
 
 		   
@@ -188,6 +192,7 @@ public class fontset5 {
 	        	    
 	            	Font font = new Font (fontfont, fontstyle , fontsize);
 	        	    sample.setFont(font);
+	        	    
 	
 	       
 	
